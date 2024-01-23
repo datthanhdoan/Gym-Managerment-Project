@@ -8,7 +8,41 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_GT">
 
-    <Grid Background="Aquamarine">
-        
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" >
+                <TextBlock Text="Tên gói tập" Width="100" Height="40" Margin="15 0 "/>
+                <TextBlock Text="Thời gian" Width="100" Height="40" Margin="85 0"/>
+                <TextBlock Text="Giá tiền" Width="100" Height="40" Margin="15 0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" >
+                <TextBox Width="150" Height="40" Margin="15"/>
+                <TextBox Width="150" Height="40" Margin="65 0"/>
+                <TextBox Width="150" Height="40" Margin="5"/>
+
+            </StackPanel>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" >
+                <Button Content="Edit"  Width="100" Height="20" Margin="5 5"/>
+                <Button Content="Save" Width="100" Height="20" Margin="5 5"/>
+                <Button Content="Delete" Width="100" Height="20" Margin="5 5"/>
+
+            </StackPanel>
+            <Border Grid.Row="0"  BorderBrush="#000" BorderThickness="2" Height="180" VerticalAlignment="Bottom">
+            </Border>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" >
+            <ListView ItemsSource="{Binding Packages}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tên gói tập" DisplayMemberBinding="{Binding TenGoiTap}" Width="150"/>
+                        <GridViewColumn Header="Thời gian" DisplayMemberBinding="{Binding ThoiGian}" Width="100"/>
+                        <GridViewColumn Header="Giá tiền" DisplayMemberBinding="{Binding GiaTien}" Width="100"/>
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
