@@ -8,10 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_DT">
 
-    <Grid Background="Aqua">
+    <Grid>
         <TabControl>
             <TabItem Header="Hóa Đơn" Margin="-2,-2,-98,-2">
-                <Grid Background="#FF92CB69">
+                <Grid>
                     <Grid.ColumnDefinitions>
 
                         <ColumnDefinition Width="164*"/>
@@ -49,11 +49,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Tổng doanh thu" Margin="98,-4,-194,-1">
-                <Grid Background="#FF599EB8">
+                <Grid>
                     <Grid.ColumnDefinitions>
 
-                        <ColumnDefinition Width="41*"/>
-                        <ColumnDefinition Width="356*"/>
+                        <ColumnDefinition Width="82*"/>
+                        <ColumnDefinition Width="603*"/>
+                        <ColumnDefinition Width="109*"/>
 
                     </Grid.ColumnDefinitions>
                     <TextBlock HorizontalAlignment="Left" Margin="187,10,0,0" TextWrapping="Wrap" Text="Tổng doanh thu " VerticalAlignment="Top" Height="35" Width="198" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
@@ -68,9 +69,9 @@
                     <DatePicker HorizontalAlignment="Left" Margin="334,53,0,0" VerticalAlignment="Top" Grid.Column="1" Width="162"/>
                     <TextBlock HorizontalAlignment="Left" Margin="252,104,0,0" TextWrapping="Wrap" Text="Đến thời gian " VerticalAlignment="Top" Grid.Column="1" Height="20" Width="92"/>
                     <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="335,104,0,0" VerticalAlignment="Top" Width="161"/>
-                    <Button Grid.Column="1" Content="Lưu" HorizontalAlignment="Left" Margin="104,140,0,0" VerticalAlignment="Top" Height="42" Width="86" BorderBrush="#FFF4ECEC" Background="#FFD667E9" FontWeight="Bold" FontSize="16"/>
-                    <Button Grid.Column="1" Content="Hủy" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" Height="42" Width="82" Background="#FFD667E9" BorderBrush="#FFF4ECEC" FontWeight="Bold" FontSize="16"/>
-                    <Border BorderBrush="Black" BorderThickness="1" Margin="10,194,10,10" Grid.ColumnSpan="2">
+                    <Button Grid.Column="1" Content="Lưu" HorizontalAlignment="Left" Margin="104,140,0,0" VerticalAlignment="Top" Height="42" Width="86" BorderBrush="#FFF4ECEC" FontWeight="Bold" FontSize="16"/>
+                    <Button Grid.Column="1" Content="Hủy" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" Height="42" Width="82" BorderBrush="#FFF4ECEC" FontWeight="Bold" FontSize="16"/>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="10,194,10,10" Grid.ColumnSpan="3">
                         <TextBlock TextWrapping="Wrap" Text="   Loại gói tập   |   Từ thời gian   |   Đến thời gian   |   Giá tiền gói tập   |   Số lượng đăng ký    |    Tổng Doanh Thu  " Margin="0,-1,0,178" FontWeight="Bold"/>
                     </Border>
                     <TextBlock HorizontalAlignment="Left" Margin="22,104,0,0" TextWrapping="Wrap" Text="Số lượng đăng ký " VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="111"/>
