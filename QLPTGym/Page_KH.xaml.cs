@@ -23,6 +23,23 @@ namespace QLPTGym
         public Page_KH()
         {
             InitializeComponent();
+            List<KhachHang> people = new List<KhachHang>
+            {
+            new KhachHang { hoTen = "Nguyễn Văn A", ngSinh = new DateTime(1990, 1, 15), gioiTinh = "Nam", sdt = "01234264518", goiTap = "Vip", thGianTap = "Còn hạn" },
+            new KhachHang { hoTen = "Trần Thị B", ngSinh = new DateTime(1995, 5, 20), gioiTinh = "Nữ", sdt = "01236475284", goiTap = "Normal", thGianTap = "Hết hạn"},
+            };
+            myListView.ItemsSource = people;
         }
+        public class KhachHang
+        {
+            public string hoTen { get; set; }
+            public DateTime ngSinh { get; set; }
+            public string gioiTinh { get; set; }
+            public string sdt { get; set; }
+            public string goiTap { get; set; }
+            public string thGianTap { get; set; }
+
+        }
+
     }
 }
