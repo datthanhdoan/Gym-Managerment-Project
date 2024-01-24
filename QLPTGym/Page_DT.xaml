@@ -9,6 +9,75 @@
       Title="Page_DT">
 
     <Grid Background="Aqua">
-        
+        <TabControl>
+            <TabItem Header="Hóa Đơn" Margin="-2,-2,-98,-2">
+                <Grid Background="#FF92CB69">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="164*"/>
+                        <ColumnDefinition Width="631*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBox HorizontalAlignment="Left" Margin="119,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" RenderTransformOrigin="-1.042,4.276" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="94,22,0,0" TextWrapping="Wrap" Text="Thanh toán hóa đơn" VerticalAlignment="Top" Height="28" Width="178" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="16"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="Khách Hàng : " VerticalAlignment="Top" Width="104"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" Text="Loại gói tập: " VerticalAlignment="Top" Width="69"/>
+                    <TextBox HorizontalAlignment="Left" Margin="120,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="119,142,0,0" VerticalAlignment="Top" Width="175" SelectedIndex="0" Grid.ColumnSpan="2">
+                        <ComboBoxItem>normal</ComboBoxItem>
+                        <ComboBoxItem>sliver</ComboBoxItem>
+                        <ComboBoxItem>vip</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,238,0,0" TextWrapping="Wrap" Text="Ngày thanh toán:" VerticalAlignment="Top" Width="108"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="120,188,0,0" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,192,0,0" TextWrapping="Wrap" Text="Ngày đăng ký:" VerticalAlignment="Top" Width="114"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="120,234,0,0" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="Tổng hóa đơn: " VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Lưu hóa đơn" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="114" Height="34" Click="Button_Click" Background="White"/>
+                    <Button Grid.Column="1" Content="Hủy" HorizontalAlignment="Left" Margin="13,365,0,0" VerticalAlignment="Top" Height="34" Width="95" Background="White"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="300,22,0,0" TextWrapping="Wrap" Text="Danh sách hóa đơn " VerticalAlignment="Top" Width="191" FontWeight="Bold" FontSize="16"/>
+                    <Grid Grid.Column="1" Margin="202,53,20,0"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,284,0,0" TextWrapping="Wrap" Text="Giá tiền gói tập: " VerticalAlignment="Top" Height="21" Width="108"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="120,284,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="2" SelectedIndex="0">
+                        <ComboBoxItem>100000</ComboBoxItem>
+                        <ComboBoxItem>200000</ComboBoxItem>
+                        <ComboBoxItem>300000</ComboBoxItem>
+                    </ComboBox>
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="177,53,10,10">
+                        <TextBlock TextWrapping="Wrap" Text=" Mã HĐ | Tên KH | Loại GT | Ngày ĐK | Ngày TT | Giá tiền GT | Tổng HĐ" Margin="0,0,0,314" FontWeight="Bold"/>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tổng doanh thu" Margin="98,-4,-194,-1">
+                <Grid Background="#FF599EB8">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="356*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="187,10,0,0" TextWrapping="Wrap" Text="Tổng doanh thu " VerticalAlignment="Top" Height="35" Width="198" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="22,57,0,0" TextWrapping="Wrap" Text="Loại gói tập " VerticalAlignment="Top" Height="18" Width="88" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="74,55,0,0" VerticalAlignment="Top" Width="146" SelectedIndex="0" Grid.Column="1">
+                        <ComboBoxItem>Tất cả</ComboBoxItem>
+                        <ComboBoxItem>1 tháng</ComboBoxItem>
+                        <ComboBoxItem>3 tháng</ComboBoxItem>
+                        <ComboBoxItem>6 tháng</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="252,55,0,0" TextWrapping="Wrap" Text="Từ thời gian " VerticalAlignment="Top" Height="18" Width="68" Grid.Column="1"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="334,53,0,0" VerticalAlignment="Top" Grid.Column="1" Width="162"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="252,104,0,0" TextWrapping="Wrap" Text="Đến thời gian " VerticalAlignment="Top" Grid.Column="1" Height="20" Width="92"/>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="335,104,0,0" VerticalAlignment="Top" Width="161"/>
+                    <Button Grid.Column="1" Content="Lưu" HorizontalAlignment="Left" Margin="104,140,0,0" VerticalAlignment="Top" Height="42" Width="86" BorderBrush="#FFF4ECEC" Background="#FFD667E9" FontWeight="Bold" FontSize="16"/>
+                    <Button Grid.Column="1" Content="Hủy" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" Height="42" Width="82" Background="#FFD667E9" BorderBrush="#FFF4ECEC" FontWeight="Bold" FontSize="16"/>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="10,194,10,10" Grid.ColumnSpan="2">
+                        <TextBlock TextWrapping="Wrap" Text="   Loại gói tập   |   Từ thời gian   |   Đến thời gian   |   Giá tiền gói tập   |   Số lượng đăng ký    |    Tổng Doanh Thu  " Margin="0,-1,0,178" FontWeight="Bold"/>
+                    </Border>
+                    <TextBlock HorizontalAlignment="Left" Margin="22,104,0,0" TextWrapping="Wrap" Text="Số lượng đăng ký " VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="111"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="74,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Page>
