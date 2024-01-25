@@ -12,7 +12,11 @@
         <TabControl>
             <TabItem Header="Nhân Viên">
                 <Grid>
-                    <ListView x:Name="StaffListView" Grid.Row="0" Grid.Column="0" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="180"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="StaffListView" Grid.Row="0"  Margin="10">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" DisplayMemberBinding="{Binding StaffId}" />
@@ -23,7 +27,7 @@
                         </ListView.View>
                     </ListView>
 
-                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" VerticalAlignment="Top">
+                    <StackPanel Grid.Row="1" Margin="10" VerticalAlignment="Top">
                         <TextBlock Text="Chi Tiết Nhân Viên" FontSize="16" FontWeight="Bold" Height="30" />
 
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,5">

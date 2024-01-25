@@ -25,9 +25,9 @@
 
             </StackPanel>
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" >
-                <Button Content="Edit"  Width="100" Height="20" Margin="5 5"/>
-                <Button Content="Save" Width="100" Height="20" Margin="5 5"/>
-                <Button Content="Delete" Width="100" Height="20" Margin="5 5"/>
+                <Button Content="Tìm kiếm"  Width="100" Height="20" Margin="5 5"/>
+                <Button Content="Lưu" Width="100" Height="20" Margin="5 5"/>
+                <Button Content="Xóa" Width="100" Height="20" Margin="5 5"/>
 
             </StackPanel>
             <Border Grid.Row="0"  BorderBrush="#000" BorderThickness="2" Height="180" VerticalAlignment="Bottom">

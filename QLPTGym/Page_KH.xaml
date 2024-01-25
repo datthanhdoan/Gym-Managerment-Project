@@ -39,7 +39,7 @@
                         <Label Margin="30,20,0,0">Ngày bắt đầu tập:</Label>
                         <DatePicker Margin="0,20,0,0"></DatePicker>
                         <Button Margin="150,20,0,0" Width="100"> Lưu </Button>
-                        <Button Margin="30,20,0,0" Width="100"> Sửa </Button>
+                        <Button Margin="30,20,0,0" Width="100"> Tìm kiếm </Button>
                         <Button Margin="30,20,0,0" Width="100"> Xóa </Button>
                 </WrapPanel>
                 <Border BorderBrush="Black" BorderThickness="1" Width="660"></Border>
