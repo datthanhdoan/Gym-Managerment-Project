@@ -22,6 +22,7 @@ namespace QLPTGym
         public Main()
         {
             InitializeComponent();
+            MainUI.Content = new Page_NV();
         }
         public void BtnNV(object sender, RoutedEventArgs e)
         {
