@@ -52,7 +52,7 @@
                             <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding ngSinh, StringFormat='dd/MM/yyyy'}"  Width="110"/>
                             <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding gioiTinh}" Width="110"/>
                             <GridViewColumn Header="Số điện thoại" DisplayMemberBinding="{Binding sdt}" Width="110"/>
-                            <GridViewColumn Header="Giói tập" DisplayMemberBinding="{Binding goiTap}" Width="110"/>
+                            <GridViewColumn Header="Gói tập" DisplayMemberBinding="{Binding goiTap}" Width="110"/>
                             <GridViewColumn Header="Thời gian tập" DisplayMemberBinding="{Binding thGianTap}" Width="110"/>
                         </GridView>
                     </ListView.View>

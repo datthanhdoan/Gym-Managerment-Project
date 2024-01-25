@@ -32,7 +32,8 @@
                     <DatePicker HorizontalAlignment="Left" Margin="120,188,0,0" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,192,0,0" TextWrapping="Wrap" Text="Ngày đăng ký:" VerticalAlignment="Top" Width="114"/>
                     <DatePicker HorizontalAlignment="Left" Margin="120,234,0,0" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="Tổng hóa đơn: " VerticalAlignment="Top" Width="104"/>
+                    <!-- <TextBlock HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="Tổng hóa đơn: " VerticalAlignment="Top" Width="104"/> -->
+                    <Label HorizontalAlignment="Left" Margin="10,325,0,0" Content="Tổng hóa đơn: " VerticalAlignment="Top" Width="104"/>
                     <Button Content="Lưu hóa đơn" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="114" Height="34" Click="Button_Click" Background="White"/>
                     <Button Grid.Column="1" Content="Hủy" HorizontalAlignment="Left" Margin="13,365,0,0" VerticalAlignment="Top" Height="34" Width="95" Background="White"/>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="300,22,0,0" TextWrapping="Wrap" Text="Danh sách hóa đơn " VerticalAlignment="Top" Width="191" FontWeight="Bold" FontSize="16"/>
