@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         WindowStyle="None"
+        MouseLeftButtonDown="Window_Move"
         >
     <Grid>
         <WrapPanel Orientation="Vertical">

@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:QLPTGym"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"      
         AllowsTransparency="True"
         WindowStyle="None"
+        MouseLeftButtonDown="Window_Move"
         >
     <Grid>
         <Grid.ColumnDefinitions>

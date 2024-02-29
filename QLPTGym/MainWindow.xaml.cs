@@ -30,5 +30,9 @@ namespace QLPTGym
             this.Visibility = Visibility.Hidden;
             main.Show();
         }
+        private void Window_Move(object sender, RoutedEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

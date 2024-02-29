@@ -24,6 +24,10 @@ namespace QLPTGym
             InitializeComponent();
             
         }
+        private void Window_Move(object sender, RoutedEventArgs e)
+        {
+            this.DragMove();
+        }
         public void BtnNV(object sender, RoutedEventArgs e)
         {
             MainUI.Content = new Page_NV();
