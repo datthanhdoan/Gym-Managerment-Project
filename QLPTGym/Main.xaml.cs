@@ -22,7 +22,7 @@ namespace QLPTGym
         public Main()
         {
             InitializeComponent();
-            MainUI.Content = new Page_NV();
+            
         }
         public void BtnNV(object sender, RoutedEventArgs e)
         {
@@ -39,6 +39,10 @@ namespace QLPTGym
         public void BtnDT(object sender, RoutedEventArgs e)
         {
             MainUI.Content = new Page_DT();
+        }
+        public void BtnDong(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
