@@ -15,3 +15,13 @@
 # 4. Page doanh thu
 - Tách ra 2 page riêng biệt là "Hóa đơn" và "Doanh thu".
 - Ở tab "Tổng doanh thu" bỏ phần "Số lượng đk".
+
+# Các chức năng tổng hợp:
+- Đăng nhập
+- Thoát(Đăng xuất)
+- Thêm thông tin NV, KH, GT, HĐ
+- Reset thông tin 
+- Tìm kiếm thông tin NV, KH, GT, HĐ
+- Lưu thông tin KH, NV, GT
+- Sửa thông tin NV, KH, GT
+- Xóa thông tin NV, KH, GT
