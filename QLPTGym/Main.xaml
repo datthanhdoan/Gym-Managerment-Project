@@ -13,11 +13,19 @@
         >
     <Grid>
         <WrapPanel Orientation="Vertical">
-            <Button Width="100" Height="50" Margin="0,35,0,35" Click="BtnNV" Content="Nhân viên"/>
-            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnKH">Khách hàng</Button>
-            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnGT">Gói tập</Button>
-            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnDT" Content="Doanh Thu"/>
-            <Button Width="100" Height="30"  Click="BtnDong">Thoát</Button>
+            <Button Width="100" Height="50" Margin="0,35,0,35" Click="BtnNV" Content="Nhân viên" 
+                    Background="#76E9FF" FontSize="15"/>
+            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnKH" Background="#76E9FF" FontSize="15">
+                Khách hàng
+            </Button>
+            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnGT" Background="#76E9FF" FontSize="15">
+                Gói tập
+            </Button>
+            <Button Width="100" Height="50" Margin="0,0,0,35" Click="BtnDT" Content="Doanh Thu" FontSize="15"
+                    Background="#76E9FF"/>
+            <Button Width="100" Height="50"  Click="BtnDong" Background="#76E9FF" FontSize="15">
+                Thoát
+            </Button>
         </WrapPanel>
         <Frame x:Name="MainUI" Margin="130,0,0,0" NavigationUIVisibility="Hidden"></Frame>
     </Grid>

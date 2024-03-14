@@ -12,6 +12,10 @@
         MouseLeftButtonDown="Window_Move"
         >
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://img.pikbest.com/ai/illus_our/20230422/1e8356701d25be410c16b3b8dc75743e.jpg!w700wp"
+                        Stretch="UniformToFill" Opacity="0.3" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -23,27 +27,31 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="1" VerticalAlignment="Center" 
-           HorizontalAlignment="Left" FontSize="20" Margin="67,0,0,0">
+        <Label Grid.Column="1" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"
+               HorizontalAlignment="Center" FontSize="20" Margin="0,76,0,0"  >
             ĐĂNG NHẬP
         </Label>
-        <Label Grid.Row="1"  FontSize="20"
-           Margin="0,22,0,34" HorizontalAlignment="Center">
+        <Label Grid.Row="1"  FontSize="20" Height="40" FontWeight="Bold"
+           Margin="102,30,0,43" HorizontalAlignment="Left" RenderTransformOrigin="0.574,-0.594">
             Tên tài khoản:
         </Label>
-        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" 
-             Margin="0,25,100,25" >
+        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="15" BorderBrush="Black"
+             Margin="0,30,100,43" Height="40" Padding="10" Name="username">
         </TextBox>
-        <Label Grid.Row="2"  FontSize="20"
-           Margin="102,29,0,38" HorizontalAlignment="Left">
+        <Label Grid.Row="2"  FontSize="20" Height="40" FontWeight="Bold"
+           Margin="136,16,0,56" HorizontalAlignment="Left">
             Mật khẩu:
         </Label>
-        <PasswordBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" 
-                 Margin="0,26,100,26">
+        <PasswordBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" FontSize="15" BorderBrush="Black"
+                 Margin="0,16,100,56" Height="40" Padding="10" Name="password">
         </PasswordBox>
-        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Width="150" Height="50" 
-            FontSize="17" Margin="54,10,62,48" Click="Btn_Dn_Click" BorderBrush="Black">
+        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="50"  FontWeight="Bold" Background="#76E9FF"
+            FontSize="17" Margin="224,0,159,62" Click="Btn_Dn_Click" BorderBrush="Black" RenderTransformOrigin="0.559,-0.617">
             Đăng Nhập
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="50" FontWeight="Bold" 
+                FontSize="17" Margin="193,0,190,62" Click="Btn_Thoat_Click" BorderBrush="Black" Background="#76E9FF">
+            Thoát
         </Button>
     </Grid>
 </Window>

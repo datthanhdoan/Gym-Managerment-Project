@@ -49,7 +49,7 @@
                     </Border>
                 </Grid>
             </TabItem>
-            <TabItem Header="Tổng doanh thu" Margin="98,-4,-194,-1">
+            <TabItem Header="Tổng doanh thu" Margin="98,-4,-194,0" Height="25" VerticalAlignment="Top">
                 <Grid>
                     <Grid.ColumnDefinitions>
 

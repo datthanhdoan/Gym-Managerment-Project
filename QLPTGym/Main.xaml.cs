@@ -22,8 +22,9 @@ namespace QLPTGym
         public Main()
         {
             InitializeComponent();
-            
+
         }
+     
         private void Window_Move(object sender, RoutedEventArgs e)
         {
             this.DragMove();
@@ -46,7 +47,13 @@ namespace QLPTGym
         }
         public void BtnDong(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            MessageBoxResult result = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Xác nhận thoát",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            
         }
     }
 }
