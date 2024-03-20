@@ -7,57 +7,221 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_KH">
-    <Border BorderBrush="Black" Margin="2,2,2,2" BorderThickness="1">
-        <Grid Background="White">
-            <Grid.RowDefinitions>
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="160"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0">
-                <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="670" FontSize="20"> Thông tin khách hàng </Label>
-            </WrapPanel>
-            <WrapPanel Margin="0,10,0,0" Grid.Row="1">
-                <WrapPanel Height="145">
-                        <Label Margin="30,0,0,0" >Họ và tên:</Label>
-                        <TextBox Padding="3,3,0,0" Width="100"></TextBox>
-                        <Label Margin="30,0,0,0" >Ngày sinh:</Label>
-                        <DatePicker></DatePicker>
-                        <Label Margin="30,0,0,0">Số điện thoại:</Label>
-                        <TextBox Padding="3,3,0,0" Width="100"></TextBox>
-                        <Label Margin="30,20,0,0"> Giới tính: </Label>
-                        <ComboBox Margin="0,20,0,0" Width="70">
-                            <ComboBoxItem>Nam</ComboBoxItem>
-                            <ComboBoxItem>Nữ</ComboBoxItem>
-                        </ComboBox>
-                        <Label Margin="30,20,0,0">Gói tập:</Label>
-                        <ComboBox Margin="0,20,0,0" Width="100">
-                            <ComboBoxItem Content="Normal"/>
-                            <ComboBoxItem Content="Silvel"/>
-                            <ComboBoxItem Content="Vip"/>
-                        </ComboBox>
-                        <Label Margin="30,20,0,0">Ngày bắt đầu tập:</Label>
-                        <DatePicker Margin="0,20,0,0"></DatePicker>
-                        <Button Margin="150,20,0,0" Width="100"> Lưu </Button>
-                        <Button Margin="30,20,0,0" Width="100"> Tìm kiếm </Button>
-                        <Button Margin="30,20,0,0" Width="100"> Xóa </Button>
-                </WrapPanel>
-                <Border BorderBrush="Black" BorderThickness="1" Width="660"></Border>
-            </WrapPanel>
-            <WrapPanel Grid.Row="2">
-                <ListView Name="myListView" Width="670">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Họ và tên" DisplayMemberBinding="{Binding hoTen}" Width="110" />
-                            <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding ngSinh, StringFormat='dd/MM/yyyy'}"  Width="110"/>
-                            <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding gioiTinh}" Width="110"/>
-                            <GridViewColumn Header="Số điện thoại" DisplayMemberBinding="{Binding sdt}" Width="110"/>
-                            <GridViewColumn Header="Gói tập" DisplayMemberBinding="{Binding goiTap}" Width="110"/>
-                            <GridViewColumn Header="Thời gian tập" DisplayMemberBinding="{Binding thGianTap}" Width="110"/>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </WrapPanel>
+
+        <WrapPanel Grid.Row="0">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="670" FontSize="20" Content="Thông tin khách hàng"/>
+        </WrapPanel>
+        <WrapPanel Margin="0,10,0,0" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="115"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Tên khách hàng: " Margin="30,10,10,0"/>
+                <TextBox Padding="2,4,0,4" Name="khName" Grid.Column="1" Margin="0,10,10,0" Width="100"/>
+                <Label Grid.Column="2" Content="Giới tính:" Margin="20,10,10,0"/>
+                <ComboBox Padding="10,6,0,4" Name="khGioitinh" Grid.Column="3" Width="85" Margin="0,10,10,0">
+                    <ComboBoxItem>Nam</ComboBoxItem>
+                    <ComboBoxItem>Nữ</ComboBoxItem>
+                </ComboBox>
+                <Label Grid.Column="4" Content="Ngày sinh:" Margin="20,10,0,0"/>
+                <DatePicker Padding="2,4,0,4" Name="khNgsinh" Grid.Column="5" Width="101" Margin="0,10,10,0"/>
+            </Grid>
+        </WrapPanel>
+        <WrapPanel Margin="0,0,0,0" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="115"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Số điện thoại: " Margin="30,0,10,0"/>
+                <TextBox Padding="2,4,0,4" Name="khSdt" Grid.Column="1" Margin="0,0,10,0" Width="100"/>
+                <Label Grid.Column="2" Content="Gói tập:" Margin="20,0,10,0"/>
+                <ComboBox Padding="10,6,0,4" Name="khGoitap" Grid.Column="3" Width="85" Margin="0,0,10,0">
+                    <ComboBoxItem>Normal</ComboBoxItem>
+                    <ComboBoxItem>Silver</ComboBoxItem>
+                    <ComboBoxItem>VIP</ComboBoxItem>
+                </ComboBox>
+                <Label Grid.Column="4" Content="Ngày đăng ký:" Margin="20,0,0,0"/>
+                <DatePicker Padding="2,4,0,4" Name="khNgdk" Grid.Column="5" Margin="0,0,10,0" Width="101"/>
+            </Grid>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3">
+            <Button Margin="160,0,0,0" Width="70" Height="30" Click="btnThem">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://static.thenounproject.com/png/28726-200.png" Width="20" Margin="0,2,0,0"/>
+                    <TextBlock Text="Thêm" Margin="4,3,0,0"/>    
+                </StackPanel>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Lavender" Offset="0"/>
+                        <GradientStop Color="GhostWhite" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> 
+            </Button>
+            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnSua">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" Width="20" Margin="0,2,0,0"/>
+                    <TextBlock Text="Sửa" Margin="7,3,0,0"/>
+                </StackPanel>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Lavender" Offset="0"/>
+                        <GradientStop Color="GhostWhite" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background> 
+            </Button>
+            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnXoa">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://static-00.iconduck.com/assets.00/x-letter-icon-256x256-w5arni31.png" Width="15" Margin="0,2,0,0"/>
+                    <TextBlock Text="Xóa" Margin="9,0,0,0"/>
+                </StackPanel>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Lavender" Offset="0"/>
+                        <GradientStop Color="GhostWhite" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnClear">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://static.thenounproject.com/png/5507757-200.png" Width="20" Margin="0,2,0,0"/>
+                    <TextBlock Text="Clear" Margin="7,3,0,0"/>
+                </StackPanel>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Lavender" Offset="0"/>
+                        <GradientStop Color="GhostWhite" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4">
+            <Label Margin="40,10,0,0" Content="Tìm kiếm"></Label>
+            <TextBox Padding="5" TextChanged="txtSearch_TextChanged" Name="search" Margin="20,10,0,0" Width="480"/>
+
+        </WrapPanel>
+        <DataGrid AlternatingRowBackground="GhostWhite" Grid.Row="5" x:Name ="myKhachHang" Width="660" Height="160" AutoGenerateColumns="False" SelectionChanged="myKhachHang_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="30">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding hoTen}" Width="92">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding ngSinh, StringFormat='dd/MM/yyyy'}" Width="80">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Giới tính" Binding="{Binding gioiTinh}" Width="72">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding sdt}" Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Gói tập" Binding="{Binding goiTap}" Width="80">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày đăng ký" Binding="{Binding ngDK, StringFormat='dd/MM/yyyy'}" Width="90">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Hạn thẻ tập" Binding="{Binding thGianTap}" Width="90">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-186" Grid.RowSpan="5">
+        </Border>
+
     </Grid>
-    </Border>
 </Page>
+

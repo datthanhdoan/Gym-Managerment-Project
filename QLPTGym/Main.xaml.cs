@@ -22,9 +22,13 @@ namespace QLPTGym
         public Main()
         {
             InitializeComponent();
-
+            Loaded += Main_Loaded;
         }
-     
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainUI.Content = new Page_NV(); 
+        }
+
         private void Window_Move(object sender, RoutedEventArgs e)
         {
             this.DragMove();
