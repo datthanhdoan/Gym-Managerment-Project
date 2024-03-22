@@ -9,8 +9,7 @@
       Title="Page_NV">
 
     <Grid>
-        <TabControl>
-            <TabItem Header="Gói tập">
+
                 <Grid Background="White" Margin="1,0,-1,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
@@ -20,33 +19,32 @@
                     <WrapPanel Grid.Row="0"/>
                     <WrapPanel Grid.Row="2">
                     </WrapPanel>
-                    <Label Content="Thông tin gói tập" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-                    <TextBox HorizontalAlignment="Left" Margin="23,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtTenGT"/>
+                    <Label Content="Thông tin gói tập" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Margin="117,-57,0,0"/>
+                    <TextBox HorizontalAlignment="Left" Margin="111,2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtTenGT"/>
                     <Label Content="Tên gói tập" HorizontalAlignment="Left" Margin="23,39,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.RowSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Margin="23,73,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtThoiGian"/>
-                    <Label Content="Thời gian" HorizontalAlignment="Left" Margin="23,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center"/>
-                    <TextBox HorizontalAlignment="Left" Margin="23,123,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtGia"/>
-                    <Label Content="Giá tiền" HorizontalAlignment="Left" Margin="23,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center"/>
-                    <TextBox HorizontalAlignment="Left" Margin="182,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtGiamGia"/>
-                    <Label Content="Sale (%)" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
-                    <Label Content="Ngày bắt đầu" HorizontalAlignment="Left" Margin="182,50,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
-                    <Label Content="Ngày kết thúc" HorizontalAlignment="Left" Margin="182,101,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="184,73,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" x:Name="datepick_NgayBD"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="184,122,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" x:Name="datepick_NgayKT"/>
+                    <TextBox HorizontalAlignment="Left" Margin="311,2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtThoiGian"/>
+                    <Label Content="Thời gian" HorizontalAlignment="Left" Margin="236,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center"/>
+                    <TextBox HorizontalAlignment="Left" Margin="504,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtGia" Grid.Row="1"/>
+                    <Label Content="Giá tiền" HorizontalAlignment="Left" Margin="451,37,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.RowSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Margin="111,55,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="23" x:Name="txtGiamGia"/>
+                    <Label Content="Sale (%)" HorizontalAlignment="Left" Margin="25,52,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
+                    <Label Content="Ngày bắt đầu" HorizontalAlignment="Left" Margin="222,54,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
+                    <Label Content="Ngày kết thúc" HorizontalAlignment="Left" Margin="416,52,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.Row="1"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="312,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" x:Name="datepick_NgayBD"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="506,56,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" x:Name="datepick_NgayKT"/>
 
                     <!-- Button -->
-                    <Button Content="Thêm" HorizontalAlignment="Right" Margin="0,25,201,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" Click="Them"/>
-                    <Button Content="Làm mới" HorizontalAlignment="Right" Margin="0,105,201,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" Click="LamMoi"/>
-                    <Button Content="Sửa" HorizontalAlignment="Right" Margin="0,25,125,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" Click="Sua"/>
-                    <Button Content="Xóa" HorizontalAlignment="Right" Margin="0,25,49,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" Click="Xoa"/>
-                    <Button Content="Tìm kiếm" HorizontalAlignment="Right" Margin="0,105,125,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70" Click="TimKiem"/>
+                    <Button Content="Thêm" HorizontalAlignment="Left" Margin="25,119,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="72" Click="Them"/>
+                    <Button Content="Sửa" HorizontalAlignment="Left" Margin="129,119,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70" Click="Sua"/>
+                    <Button Content="Xóa" HorizontalAlignment="Left" Margin="222,119,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" Click="Xoa"/>
+                    <Button Content="Làm mới" HorizontalAlignment="Left" Margin="451,117,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70" Click="LamMoi"/>
+                    <Button Content="Tìm kiếm" HorizontalAlignment="Left" Margin="540,117,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70" Click="TimKiem"/>
 
 
                     <!-- Data  -->
                     <DataGrid Grid.Row="2" x:Name="myListView"  Height="200" SelectionChanged="DataGrid_SelectionChanged">
                     </DataGrid>
                 </Grid>
-            </TabItem>
-        </TabControl>
+
     </Grid>
 </Page>
