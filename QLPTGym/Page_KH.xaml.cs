@@ -14,13 +14,13 @@ namespace QLPTGym
     public partial class Page_KH : Page
     {
         private SQLiteConnection connection;
-        private string databaseName = "D:/Gym-Project/gym.db";
-
+        private string databaseName = "D:/database/gym.db";
 
         public Page_KH()
         {
             InitializeComponent();
             ConnectToDatabase();
+            LoadGT();
             UpdateAllValidities();
             //LoadData();
 
@@ -53,12 +53,30 @@ namespace QLPTGym
             }
             myKhachHang.ItemsSource = kh;
             reader.Close();
-
         }
+        private void LoadGT()
+        {
+            SQLiteCommand command = new SQLiteCommand("SELECT TenGoiTap FROM goitap", connection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<GoiTap> goiTapList = new List<GoiTap>();
+
+            while (reader.Read())
+            {
+                string tenGoiTap = reader.GetString(0);
+                goiTapList.Add(new GoiTap { TenGoiTap = tenGoiTap });
+            }
+
+            khGoitap.ItemsSource = goiTapList;
+            khGoitap.DisplayMemberPath = "TenGoiTap";
+
+            reader.Close();
+        }
+
+
 
         private void UpdateAllValidities()
         {
-            SQLiteCommand cmd = new SQLiteCommand("SELECT id, goiTap, ngDK FROM khachhang", connection);
+            SQLiteCommand cmd = new SQLiteCommand("SELECT kh.id, kh.goiTap, kh.ngDK, gt.ThoiGianGoiTap FROM khachhang kh JOIN goitap gt ON kh.goiTap = gt.TenGoiTap", connection);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -66,27 +84,43 @@ namespace QLPTGym
                 int id = reader.GetInt32(0);
                 string GT = reader.GetString(1);
                 string DK = reader.GetString(2);
-
+                string ThoiGianGoiTap = reader.GetString(3);
                 DateTime registeredDate = DateTime.Parse(DK);
-
-                int packageDurationInMonths = GetPackageDuration(GT);
-
-                DateTime currentDate = DateTime.Now;
-                string thGianTap;
-                if ((currentDate.Year * 12 + currentDate.Month) - (registeredDate.Year * 12 + registeredDate.Month) == packageDurationInMonths
-                    && (currentDate.Day > registeredDate.Day))
+                String thGianTap;
+                int packageDuration;
+                if (ThoiGianGoiTap.Contains("ngày"))
                 {
-                    thGianTap = "Hết hạn";
+                    packageDuration = int.Parse(ThoiGianGoiTap.Split(' ')[0]); 
+                    DateTime expirationDate = registeredDate.AddDays(packageDuration);
+                    if (DateTime.Now > expirationDate)
+                    {
+                        thGianTap = "Hết hạn";
+                    }
+                    else
+                    {
+                        thGianTap = "Còn hạn";
+                    }
                 }
-                else if ((currentDate.Year * 12 + currentDate.Month) - (registeredDate.Year * 12 + registeredDate.Month) > packageDurationInMonths)
+                else if (ThoiGianGoiTap.Contains("tháng"))
                 {
-                    thGianTap = "Hết hạn";
+                    packageDuration = int.Parse(ThoiGianGoiTap.Split(' ')[0]);
+                    DateTime expirationDate = registeredDate.AddMonths(packageDuration).AddDays(1);
+
+                    if (DateTime.Now >= expirationDate)
+                    {
+                        thGianTap = "Hết hạn";
+                    }
+                    else
+                    {
+                        thGianTap = "Còn hạn";
+                    }
                 }
+
+
                 else
                 {
-                    thGianTap = "Còn hạn";
+                    thGianTap = "Không xác định";
                 }
-
 
                 string query = "UPDATE khachhang SET thGianTap = @thGianTap WHERE id = @id";
                 SQLiteCommand updateCmd = new SQLiteCommand(query, connection);
@@ -98,6 +132,8 @@ namespace QLPTGym
             reader.Close();
             LoadData();
         }
+
+
 
 
         public void btnClear(object sender, RoutedEventArgs e)
@@ -196,6 +232,10 @@ namespace QLPTGym
             public string thGianTap { get; set; }
 
         }
+        public class GoiTap
+        {
+            public string TenGoiTap { get; set; }
+        }
         private void myKhachHang_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (myKhachHang.SelectedItem != null)
@@ -210,20 +250,7 @@ namespace QLPTGym
             }
         }
 
-        private int GetPackageDuration(string packageName)
-        {
-            switch (packageName)
-            {
-                case "VIP":
-                    return 6;
-                case "Normal":
-                    return 1;
-                case "Silver":
-                    return 3;
-                default:
-                    return 0;
-            }
-        }
+        
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {

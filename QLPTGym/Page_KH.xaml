@@ -26,14 +26,14 @@
                     <ColumnDefinition Width="135"/>
                     <ColumnDefinition Width="110"/>
                     <ColumnDefinition Width="90"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="110"/>
                     <ColumnDefinition Width="115"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Tên khách hàng: " Margin="30,10,10,0"/>
+                <Label Grid.Column="0" Content="Tên khách hàng: " Margin="20,10,10,0"/>
                 <TextBox Padding="2,4,0,4" Name="khName" Grid.Column="1" Margin="0,10,10,0" Width="100"/>
                 <Label Grid.Column="2" Content="Giới tính:" Margin="20,10,10,0"/>
-                <ComboBox Padding="10,6,0,4" Name="khGioitinh" Grid.Column="3" Width="85" Margin="0,10,10,0">
+                <ComboBox Padding="10,6,0,4" Name="khGioitinh" Grid.Column="3" Width="100" Margin="0,10,0,0">
                     <ComboBoxItem>Nam</ComboBoxItem>
                     <ComboBoxItem>Nữ</ComboBoxItem>
                 </ComboBox>
@@ -47,17 +47,15 @@
                     <ColumnDefinition Width="135"/>
                     <ColumnDefinition Width="110"/>
                     <ColumnDefinition Width="90"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="110"/>
                     <ColumnDefinition Width="115"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Số điện thoại: " Margin="30,0,10,0"/>
+                <Label Grid.Column="0" Content="Số điện thoại: " Margin="20,0,10,0"/>
                 <TextBox Padding="2,4,0,4" Name="khSdt" Grid.Column="1" Margin="0,0,10,0" Width="100"/>
                 <Label Grid.Column="2" Content="Gói tập:" Margin="20,0,10,0"/>
-                <ComboBox Padding="10,6,0,4" Name="khGoitap" Grid.Column="3" Width="85" Margin="0,0,10,0">
-                    <ComboBoxItem>Normal</ComboBoxItem>
-                    <ComboBoxItem>Silver</ComboBoxItem>
-                    <ComboBoxItem>VIP</ComboBoxItem>
+                <ComboBox Padding="10,6,0,4" Name="khGoitap" Grid.Column="3" Width="100" Margin="0,0,0,0">
+                    
                 </ComboBox>
                 <Label Grid.Column="4" Content="Ngày đăng ký:" Margin="20,0,0,0"/>
                 <DatePicker Padding="2,4,0,4" Name="khNgdk" Grid.Column="5" Margin="0,0,10,0" Width="101"/>
