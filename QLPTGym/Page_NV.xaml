@@ -24,7 +24,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="125"/>
-                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="70"/>
                     <ColumnDefinition Width="140"/>
                     <ColumnDefinition Width="90"/>
@@ -43,7 +43,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="125"/>
-                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="70"/>
                     <ColumnDefinition Width="140"/>
                     <ColumnDefinition Width="90"/>
@@ -63,52 +63,24 @@
         </WrapPanel>
         <WrapPanel Grid.Row="3">
             <Button Margin="160,0,0,0" Width="70" Height="30" Click="btnThem">
-                <WrapPanel Width="70" Height="30">
-                    <Image Source="https://cdn1.iconfinder.com/data/icons/users-and-groups/38/user-group-add-512.png" Margin="5,5,0,0" Width="20" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Thêm" HorizontalAlignment="Right" Margin="5,6,0,0"/>
+                <WrapPanel Width="40" Height="30">
+                    <TextBlock Text="Thêm" HorizontalAlignment="Center" Margin="5,5,0,0"/>
                 </WrapPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="LightCyan" Offset="0"/>
-                        <GradientStop Color="SkyBlue" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
             </Button>
-            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnSua">   
-                <WrapPanel Width="70" Height="30">
-                    <Image Source="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_edit-512.png" Margin="5,3,0,0" Width="20" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Sửa" HorizontalAlignment="Right" Margin="10,6,0,0"/>
+            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnSua">
+                <WrapPanel Width="40" Height="30">
+                    <TextBlock Text="Sửa" HorizontalAlignment="Center" Margin="10,5,0,0"/>
                 </WrapPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="LightCyan" Offset="0"/>
-                        <GradientStop Color="SkyBlue" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
             </Button>
             <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnXoa">
-                <WrapPanel Width="70" Height="30">
-                    <Image Source="https://cdn1.iconfinder.com/data/icons/ionicons-sharp-vol-2/512/trash-sharp-128.png" Margin="5,3,0,0" Width="18" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Xóa" HorizontalAlignment="Right" Margin="10,6,0,0"/>
+                <WrapPanel Width="40" Height="30">
+                    <TextBlock Text="Xóa" HorizontalAlignment="Center" Margin="10,5,0,0"/>
                 </WrapPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="LightCyan" Offset="0"/>
-                        <GradientStop Color="SkyBlue" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
             </Button>
             <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnReset">
                 <WrapPanel Width="70" Height="30">
-                    <Image Source="https://cdn3.iconfinder.com/data/icons/media-player-ui-7/24/undo_replay_reset_history_revert-512.png" Margin="5,3,0,0" Width="18" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Reset" HorizontalAlignment="Right" Margin="7,5,0,0"/>
+                    <TextBlock Text="Làm mới" HorizontalAlignment="Center" Margin="10,5,0,0"/>
                 </WrapPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="LightCyan" Offset="0"/>
-                        <GradientStop Color="SkyBlue" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
             </Button>
         </WrapPanel>
         <WrapPanel Grid.Row="4">
