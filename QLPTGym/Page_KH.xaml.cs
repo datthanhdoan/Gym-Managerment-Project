@@ -157,7 +157,7 @@ namespace QLPTGym
         }
         public void btnThem(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(khName.Text) && !string.IsNullOrEmpty(khGoitap.Text) && !string.IsNullOrEmpty(khNgdk.Text))
+            if (!string.IsNullOrEmpty(khName.Text) && !string.IsNullOrEmpty(khSdt.Text) && !string.IsNullOrEmpty(khGoitap.Text) && !string.IsNullOrEmpty(khNgdk.Text))
             {
                 string query = "INSERT INTO khachhang(hoTen, ngSinh, gioiTinh, sdt, goiTap, ngDK) VALUES(@hoTen, @ngSinh, @gioiTinh, @sdt, @goiTap, @ngDK)";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
@@ -168,14 +168,49 @@ namespace QLPTGym
                 command.Parameters.AddWithValue("@goiTap", khGoitap.Text);
                 command.Parameters.AddWithValue("@ngDK", khNgdk.Text);
                 command.ExecuteNonQuery();
+
+                string giaQuery = "SELECT Gia, GiamGia FROM goitap WHERE TenGoiTap = @tenGoiTap";
+                SQLiteCommand giaCommand = new SQLiteCommand(giaQuery, connection);
+                giaCommand.Parameters.AddWithValue("@tenGoiTap", khGoitap.Text);
+                SQLiteDataReader reader = giaCommand.ExecuteReader();
+
+                int tienPhaiTra = 0;
+                if (reader.Read())
+                {
+                    int gia = reader.GetInt32(0);
+                    double giamGia = reader.GetDouble(1);
+                    tienPhaiTra = (int)(gia - (gia * (giamGia / 100)));
+
+                    reader.Close();
+
+                    string lastInsertedIdQuery = "SELECT last_insert_rowid()";
+                    SQLiteCommand lastInsertedIdCommand = new SQLiteCommand(lastInsertedIdQuery, connection);
+                    int lastInsertedId = Convert.ToInt32(lastInsertedIdCommand.ExecuteScalar());
+
+                    string updateQuery = "UPDATE khachhang SET tienPhaiTra = @tienPhaiTra WHERE id = @id";
+                    SQLiteCommand updateCommand = new SQLiteCommand(updateQuery, connection);
+                    updateCommand.Parameters.AddWithValue("@tienPhaiTra", tienPhaiTra);
+                    updateCommand.Parameters.AddWithValue("@id", lastInsertedId);
+                    updateCommand.ExecuteNonQuery();
+                }
+                
+                string insertHoaDonQuery = "INSERT INTO hoadon(TenKhachHang, SoDienThoai, GoiTap, TienPhaiTra) VALUES(@TenKhachHang, @SoDienThoai, @GoiTap, @TienPhaiTra)";
+                SQLiteCommand insertHoaDonCommand = new SQLiteCommand(insertHoaDonQuery, connection);
+                insertHoaDonCommand.Parameters.AddWithValue("@TenKhachHang", khName.Text);
+                insertHoaDonCommand.Parameters.AddWithValue("@SoDienThoai", khSdt.Text);
+                insertHoaDonCommand.Parameters.AddWithValue("@GoiTap", khGoitap.Text);
+                insertHoaDonCommand.Parameters.AddWithValue("@TienPhaiTra", tienPhaiTra);
+                insertHoaDonCommand.ExecuteNonQuery();
+                
                 UpdateAllValidities();
                 clear();
             }
             else
             {
-                MessageBox.Show("Chưa đủ thông tin");
+                MessageBox.Show("Chưa đủ thông tin! Thông tin phải gồm tên khách hàng, số điện thoại, gói tập, ngày đăng ký");
             }
         }
+
         public void btnSua(object sender, RoutedEventArgs e)
         {
             if (myKhachHang.SelectedItem != null)
@@ -218,7 +253,10 @@ namespace QLPTGym
                     clear();
                 }
             }
-            else { }
+            else 
+            {
+                MessageBox.Show("Vui lòng chọn 1 khách hàng");
+            }
         }
         public class KhachHang
         {

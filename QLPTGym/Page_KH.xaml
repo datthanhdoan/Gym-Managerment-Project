@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_KH">
-    <Grid Background="GhostWhite">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="70"/>
@@ -62,54 +62,10 @@
             </Grid>
         </WrapPanel>
         <WrapPanel Grid.Row="3">
-            <Button Margin="160,0,0,0" Width="70" Height="30" Click="btnThem">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="https://static.thenounproject.com/png/28726-200.png" Width="20" Margin="0,2,0,0"/>
-                    <TextBlock Text="Thêm" Margin="4,3,0,0"/>    
-                </StackPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="Lavender" Offset="0"/>
-                        <GradientStop Color="GhostWhite" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background> 
-            </Button>
-            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnSua">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" Width="20" Margin="0,2,0,0"/>
-                    <TextBlock Text="Sửa" Margin="7,3,0,0"/>
-                </StackPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="Lavender" Offset="0"/>
-                        <GradientStop Color="GhostWhite" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background> 
-            </Button>
-            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnXoa">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="https://static-00.iconduck.com/assets.00/x-letter-icon-256x256-w5arni31.png" Width="15" Margin="0,2,0,0"/>
-                    <TextBlock Text="Xóa" Margin="9,0,0,0"/>
-                </StackPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="Lavender" Offset="0"/>
-                        <GradientStop Color="GhostWhite" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button Margin="30,0,0,0" Width="70" Height="30" Click="btnClear">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="https://static.thenounproject.com/png/5507757-200.png" Width="20" Margin="0,2,0,0"/>
-                    <TextBlock Text="Clear" Margin="7,3,0,0"/>
-                </StackPanel>
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="Lavender" Offset="0"/>
-                        <GradientStop Color="GhostWhite" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+            <Button Content="Thêm" Margin="160,0,0,0" Width="70" Height="30" Click="btnThem"></Button>
+            <Button Content="Sửa" Margin="30,0,0,0" Width="70" Height="30" Click="btnSua"></Button>
+            <Button Content="Xóa" Margin="30,0,0,0" Width="70" Height="30" Click="btnXoa"></Button>
+            <Button Content="Làm mới" Margin="30,0,0,0" Width="70" Height="30" Click="btnClear"></Button>
         </WrapPanel>
         <WrapPanel Grid.Row="4">
             <Label Margin="40,10,0,0" Content="Tìm kiếm"></Label>
