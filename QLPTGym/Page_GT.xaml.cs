@@ -27,12 +27,12 @@ namespace QLPTGym
     public partial class Page_GT : Page
     {
         private SQLiteConnection connection;
-        private string databaseName = "D:/database/goitap.db";
+        private string databaseName = "D:/database/gym.db";
         public class Goitap
         {
             public int MaGT { get; set; }
             public string TenGT { get; set; }
-            public int ThoiGian { get; set; }
+            public string ThoiGian { get; set; }
             public int Gia { get; set; }
             public int GiamGia { get; set; }
             public string NgayBD { get; set; }
@@ -105,7 +105,7 @@ namespace QLPTGym
                 {
                     MaGT = reader.GetInt32(0),
                     TenGT = reader.GetString(1),
-                    ThoiGian = reader.GetInt32(2),
+                    ThoiGian = reader.GetString(2),
                     Gia = reader.GetInt32(3),
                     GiamGia = reader.GetInt32(4),
                     NgayBD = reader.IsDBNull(5) ? null : reader.GetString(5),
@@ -276,7 +276,7 @@ namespace QLPTGym
                 {
                     MaGT = reader.GetInt32(0),
                     TenGT = reader.GetString(1),
-                    ThoiGian = reader.GetInt32(2),
+                    ThoiGian = reader.GetString(2),
                     Gia = reader.GetInt32(3),
                     GiamGia = reader.GetInt32(4),
                     NgayBD = reader.IsDBNull(5) ? null : reader.GetString(5),
