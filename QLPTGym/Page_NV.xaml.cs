@@ -12,7 +12,7 @@ namespace QLPTGym
      public partial class Page_NV : Page
     {
         private SQLiteConnection connection;
-        private string databaseName = "D:/QLPTGym/gym.db";
+        private string databaseName = "D:/database/gym.db";
 
 
         public Page_NV()
