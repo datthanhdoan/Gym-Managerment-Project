@@ -13,13 +13,15 @@
         <Grid Background="White" Margin="1,0,-1,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="49"/>
-                <RowDefinition Height="170"/>
-                <RowDefinition Height="Auto" MinHeight="181"/>
+                <RowDefinition Height="190"/>
+                <RowDefinition Height="Auto" MinHeight="161"/>
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0"/>
             <WrapPanel Grid.Row="2">
             </WrapPanel>
-            <Label Content="Thông tin gói tập" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,-4,0,0"/>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0,26,0,-212" Grid.RowSpan="3">
+            </Border>
+            <Label Content="Thông tin gói tập" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Margin="-40,-3,0,0"/>
             <TextBox HorizontalAlignment="Left" Margin="112,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="30" x:Name="txtTenGT" Grid.RowSpan="2"/>
             <Label Content="Tên gói tập" HorizontalAlignment="Left" Margin="23,39,0,0" VerticalAlignment="Top" Width="106" VerticalContentAlignment="Center" Grid.RowSpan="2" Height="26"/>
             <TextBox HorizontalAlignment="Left" Margin="312,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="30" x:Name="txtThoiGian" Grid.RowSpan="2"/>
@@ -42,7 +44,107 @@
 
 
             <!-- Data  -->
-            <DataGrid Grid.Row="2" x:Name="myListView" SelectionChanged="DataGrid_SelectionChanged"/>
+            <DataGrid Grid.Row="2" x:Name="myListView" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding MaGT}" Width="30">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Tên Gói Tập" Binding="{Binding TenGT}" Width="92">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Thời Gian" Binding="{Binding ThoiGian, StringFormat='dd/MM/yyyy'}" Width="80">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Giá" Binding="{Binding Gia}" Width="72">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Giảm Giá (%)" Binding="{Binding GiamGia}" Width="100">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Ngày Bắt Đầu" Binding="{Binding NgayBD , StringFormat='dd/MM/yyyy'}" Width="80">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Ngày Kết Thúc" Binding="{Binding NgayKT, StringFormat='dd/MM/yyyy'}" Width="90">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Giá Cuối" Binding="{Binding GiaCuoi}" Width="90">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
     </Grid>
