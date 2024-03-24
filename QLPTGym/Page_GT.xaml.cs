@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -181,6 +182,13 @@ namespace QLPTGym
             {
                 MessageBox.Show("Giảm giá không được để trống (từ 0 -> 100 phần trăm)"); return false;
             }
+            string pattern = @"^\d+ (ngày|tháng)$";
+            if (!Regex.IsMatch(txtThoiGian.Text, pattern))
+            {
+                MessageBox.Show("Thời gian phải được nhập dưới dạng '1 ngày' hoặc '1 tháng'");
+                return false;
+            }
+
             return true;
         }
 
