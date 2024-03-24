@@ -22,7 +22,7 @@ namespace QLPTGym
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string databaseName = "D:/UserLogin.db";
+        private string databaseName = "D:/database/UserLogin.db";
         private SQLiteConnection connection;
         public MainWindow()
         {
