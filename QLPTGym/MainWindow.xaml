@@ -45,12 +45,12 @@
         <PasswordBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" FontSize="15" BorderBrush="Black"
                  Margin="0,16,100,56" Height="40" Padding="10" Name="password">
         </PasswordBox>
-        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="50"  FontWeight="Bold" Background="#76E9FF"
+        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="50"  FontWeight="Bold" 
             FontSize="17" Margin="224,0,159,62" Click="Btn_Dn_Click" BorderBrush="Black" RenderTransformOrigin="0.559,-0.617">
             Đăng Nhập
         </Button>
         <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="50" FontWeight="Bold" 
-                FontSize="17" Margin="193,0,190,62" Click="Btn_Thoat_Click" BorderBrush="Black" Background="#76E9FF">
+                FontSize="17" Margin="193,0,190,62" Click="Btn_Thoat_Click" BorderBrush="Black">
             Thoát
         </Button>
     </Grid>
