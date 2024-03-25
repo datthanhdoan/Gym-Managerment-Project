@@ -90,7 +90,7 @@ namespace QLPTGym
                 int packageDuration;
                 if (ThoiGianGoiTap.Contains("ngày"))
                 {
-                    packageDuration = int.Parse(ThoiGianGoiTap.Split(' ')[0]); 
+                    packageDuration = int.Parse(ThoiGianGoiTap.Split(' ')[0]);
                     DateTime expirationDate = registeredDate.AddDays(packageDuration);
                     if (DateTime.Now > expirationDate)
                     {
@@ -182,26 +182,17 @@ namespace QLPTGym
                     tienPhaiTra = (int)(gia - (gia * (giamGia / 100)));
 
                     reader.Close();
-
-                    string lastInsertedIdQuery = "SELECT last_insert_rowid()";
-                    SQLiteCommand lastInsertedIdCommand = new SQLiteCommand(lastInsertedIdQuery, connection);
-                    int lastInsertedId = Convert.ToInt32(lastInsertedIdCommand.ExecuteScalar());
-
-                    string updateQuery = "UPDATE khachhang SET tienPhaiTra = @tienPhaiTra WHERE id = @id";
-                    SQLiteCommand updateCommand = new SQLiteCommand(updateQuery, connection);
-                    updateCommand.Parameters.AddWithValue("@tienPhaiTra", tienPhaiTra);
-                    updateCommand.Parameters.AddWithValue("@id", lastInsertedId);
-                    updateCommand.ExecuteNonQuery();
                 }
-                
-                string insertHoaDonQuery = "INSERT INTO hoadon(TenKhachHang, SoDienThoai, GoiTap, TienPhaiTra) VALUES(@TenKhachHang, @SoDienThoai, @GoiTap, @TienPhaiTra)";
+
+                string insertHoaDonQuery = "INSERT INTO hoadon(TenKhachHang, SoDienThoai, GoiTap, NgayDangKy, TienPhaiTra) VALUES(@TenKhachHang, @SoDienThoai, @GoiTap, @NgayDangKy, @TienPhaiTra)";
                 SQLiteCommand insertHoaDonCommand = new SQLiteCommand(insertHoaDonQuery, connection);
                 insertHoaDonCommand.Parameters.AddWithValue("@TenKhachHang", khName.Text);
                 insertHoaDonCommand.Parameters.AddWithValue("@SoDienThoai", khSdt.Text);
                 insertHoaDonCommand.Parameters.AddWithValue("@GoiTap", khGoitap.Text);
+                insertHoaDonCommand.Parameters.AddWithValue("@NgayDangKy", khNgdk.Text);
                 insertHoaDonCommand.Parameters.AddWithValue("@TienPhaiTra", tienPhaiTra);
                 insertHoaDonCommand.ExecuteNonQuery();
-                
+
                 UpdateAllValidities();
                 clear();
             }
@@ -253,7 +244,7 @@ namespace QLPTGym
                     clear();
                 }
             }
-            else 
+            else
             {
                 MessageBox.Show("Vui lòng chọn 1 khách hàng");
             }
@@ -288,7 +279,7 @@ namespace QLPTGym
             }
         }
 
-        
+
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
