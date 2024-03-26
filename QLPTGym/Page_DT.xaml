@@ -9,9 +9,11 @@
       Title="Page_DT">
 
     <Grid>
-        <TabControl>
-            <TabItem Header="Hóa Đơn" Margin="-2,-2,-98,-2">
-                <DataGrid Grid.Row="2" x:Name="myHoadon" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" x:Name="myHoadon" Width="660" AutoGenerateColumns="False" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="30">
                             <DataGridTextColumn.HeaderStyle>
@@ -25,7 +27,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding tenkh}" Width="92">
+                <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding tenkh}" Width="154">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -37,7 +39,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Số điện thoại" Binding="{Binding sdt}" Width="80">
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding sdt}" Width="100">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -49,7 +51,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Gói tập" Binding="{Binding goitap}" Width="72">
+                <DataGridTextColumn Header="Gói tập" Binding="{Binding goitap}" Width="100">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -61,7 +63,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Ngày đăng kí" Binding="{Binding ngayDK}" Width="72">
+                <DataGridTextColumn Header="Ngày đăng kí" Binding="{Binding ngayDK}" Width="120">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -73,7 +75,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tiền phải trả" Binding="{Binding tienphaitra}" Width="100">
+                <DataGridTextColumn Header="Tiền phải trả" Binding="{Binding tienphaitra}" Width="130">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -88,8 +90,59 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-            </TabItem>
-        </TabControl>
+
+        <DataGrid Grid.Row="1" x:Name="myDoanhThu" Width="660" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="30">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding tenkh}" Width="154">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding sdt}" Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Tiền phải trả" Binding="{Binding tienphaitra}" Width="130">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>
