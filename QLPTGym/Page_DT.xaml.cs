@@ -50,8 +50,8 @@ namespace QLPTGym
 
             int currentCustomers = hoadons.Count(h => !string.IsNullOrEmpty(h.ngayDK));
 
-            tbTotalCustomers.Text = $"Tổng số khách đã đăng ký: {totalCustomers}";
-            tbCurrentCustomers.Text = $"Số khách hàng hiện đang đăng ký: {currentCustomers}";
+            lblTotalCustomers.Content = $"Tổng số khách đã đăng ký: {totalCustomers}";
+            lblCurrentCustomers.Content = $"Số khách hàng hiện đang đăng ký: {currentCustomers}";
         }
 
         private void CalculateRevenue()
@@ -60,7 +60,7 @@ namespace QLPTGym
             if (hoadons != null && hoadons.Any())
             {
                 int totalRevenue = hoadons.Sum(h => h.tienphaitra);
-                tbTotalRevenue.Text = $"Tổng doanh thu: {totalRevenue} VNĐ";
+                lblTotalRevenue.Content = $"Tổng doanh thu: {totalRevenue} VNĐ";
             }
         }
 
