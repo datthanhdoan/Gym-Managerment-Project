@@ -19,7 +19,7 @@
             <WrapPanel Grid.Row="0"/>
             <WrapPanel Grid.Row="2">
             </WrapPanel>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0,26,0,-212" Grid.RowSpan="3">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="-2,4,8,-50" Grid.RowSpan="3">
             </Border>
             <Label Content="Thông tin gói tập" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Margin="-40,-3,0,0"/>
             <TextBox HorizontalAlignment="Left" Margin="112,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Height="30" x:Name="txtTenGT" Grid.RowSpan="2"/>
@@ -44,7 +44,7 @@
 
 
             <!-- Data  -->
-            <DataGrid Grid.Row="2" x:Name="myListView" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid Grid.Row="2" x:Name="myListView" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,3,10,-45">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding MaGT}" Width="30">
                         <DataGridTextColumn.HeaderStyle>
